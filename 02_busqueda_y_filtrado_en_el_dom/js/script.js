@@ -1,19 +1,7 @@
 // Esperar que el DOM este cargado
 $(document).ready(function(){
 
-    // Descendientes directos
-    $('aside > img').fadeOut('slow');
-
-    // Búsqueda de elementos
-    $('a span').css('color', 'red');
-
-    // Selectores múltiples
-    // $('a, span, p').slideToggle();
-
-    // Pseudo classes
-    $('p:first').css({
-        'font-weight': 'bold',
-        'color': 'goldenrod'
-    });
+    $('.contenido').find('p').first().css('background-color', 'red');
+    $('.contenido').find('p').eq(2).css('background-color', 'green');
 
 });

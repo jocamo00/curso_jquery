@@ -23,3 +23,9 @@ $('p:first').css({
         'color': 'goldenrod'
 });
 ```
+
+### Búsqueda de elementos en el DOM
+```js
+$('.contenido').find('p').first().css('background-color', 'red');
+$('.contenido').find('p').eq(2).css('background-color', 'green');
+```
