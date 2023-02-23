@@ -156,6 +156,7 @@ let $parent = $('.lateral').find('span').last().parents();
 ```
 
 ### Insertar contenido en el DOM
+Con .after y .before se añade antes o despues del elemento seleccionado
 ![Descripción de la imagen](img/Screenshot_08.png)
 ```html
 <section class="contenido">
@@ -169,4 +170,36 @@ let $parent = $('.lateral').find('span').last().parents();
 ```javascript
     let $enlace = $('<a href="#">Conocer más gatos negros!</a>');
     $('.contenido').find('p').first().after($enlace);
+```
+
+### Insertar contenido en el DOM II
+Con .prepend y .append se añade dentro del elemento seleccionado al principio o al final.
+![Descripción de la imagen](img/Screenshot_09.png)
+```html
+<section class="contenido">
+    <h1>Los gatos negros te dan la bienvenida</h1>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+</section>
+```
+```javascript
+    let $enlace = $('<a href="#">Conocer más gatos negros!</a>');
+    $('.contenido').find('p').prepend($enlace);
+```
+
+### Eliminar elementos del DOM
+![Descripción de la imagen](img/Screenshot_10.png)
+```html
+<section class="contenido">
+    <h1>Los gatos negros te dan la bienvenida</h1>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+</section>
+```
+```javascript
+$('.contenido').find('p').remove();
 ```
