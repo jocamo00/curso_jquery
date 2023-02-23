@@ -154,3 +154,19 @@ let $parent = $('.lateral').find('span').last().parents();
         'transform': 'rotate(180deg)'
     });
 ```
+
+### Insertar contenido en el DOM
+![Descripción de la imagen](img/Screenshot_08.png)
+```html
+<section class="contenido">
+    <h1>Los gatos negros te dan la bienvenida</h1>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+</section>
+```
+```javascript
+    let $enlace = $('<a href="#">Conocer más gatos negros!</a>');
+    $('.contenido').find('p').first().after($enlace);
+```
