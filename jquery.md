@@ -1,13 +1,71 @@
 ## jQuery
 
+## HTML sobre el que se basaran los ejemplos jQuery
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    
+    <!-- Contenedor principal -->
+    <main>
+
+        <!-- Sidebar -->
+        <aside class="lateral">
+            <img src="img/black-cat.jpg" alt="Black Cats Rules!">
+
+            <!-- Social -->
+            <a href="#">
+                <img src="img/mail.png" alt="Correo-e">
+                <span>Correo-e</span>
+            </a>
+            <a href="#">
+                <img src="img/snapchat.png" alt="Snapchat">
+                <span>Snapchat</span>
+            </a>
+            <a href="#">
+                <img src="img/twitter.png" alt="Twitter">
+                <span>Twitter</span>
+            </a>
+            
+        </aside>
+
+        <!-- Contenido -->
+        <section class="contenido">
+            <h1>Los gatos negros te dan la bienvenida</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem ex aliquid pariatur ad alias necessitatibus, hic corrupti delectus. Excepturi quis incidunt ratione officia hic amet, natus tempora nesciunt ipsum, atque.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem ex aliquid pariatur ad alias necessitatibus, hic corrupti delectus. Excepturi quis incidunt ratione officia hic amet, natus tempora nesciunt ipsum, atque.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem ex aliquid pariatur ad alias necessitatibus, hic corrupti delectus. Excepturi quis incidunt ratione officia hic amet, natus tempora nesciunt ipsum, atque.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem ex aliquid pariatur ad alias necessitatibus, hic corrupti delectus. Excepturi quis incidunt ratione officia hic amet, natus tempora nesciunt ipsum, atque.</p>
+
+            
+            <!-- Thumbnails -->
+            <ul>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </section>
+    </main>
+
+
+
+
+    <script src="lib/jquery-3.6.3.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
+```
+
 
 ### Seleccionar desdendientes directos
-
-```html
-<aside class="lateral">
-    <img src="img/black-cat.jpg" alt="Black Cats Rules!">
-</aside>
-```
 ```javascript
 $('aside > img').fadeOut('slow');
 ```
@@ -15,13 +73,6 @@ $('aside > img').fadeOut('slow');
 ### Búsqueda de elementos
 ![Descripción de la imagen](img/Screenshot.png)
 
-
-```html
- <a href="#">
-    <img src="img/mail.png" alt="Correo-e">
-    <span>Correo-e</span>
-</a>
-```
 ```javascript
 $('a span').css('color', 'red');
 ```
@@ -34,16 +85,6 @@ $('a, span, p').slideToggle();
 ### Pseudo clases
 ![Descripción de la imagen](img/Screenshot_01.png)
 
-```html
-<section class="contenido">
-    <h1>Los gatos negros te dan la bienvenida</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-</section>
-
-```
 ```javascript
 $('p:first').css({
         'font-weight': 'bold',
@@ -54,78 +95,21 @@ $('p:first').css({
 ### Búsqueda de elementos en el DOM
 ![Descripción de la imagen](img/Screenshot_02.png)
 
-```html
-<section class="contenido">
-        <h1>Los gatos negros te dan la bienvenida</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-</section>
-```
 ```javascript
 $('.contenido').find('p').first().css('background-color', 'red');
 $('.contenido').find('p').eq(2).css('background-color', 'green');
 ```
 
 ### Encadenar métodos y recorrer el DOM
-
 ![Descripción de la imagen](img/Screenshot_03.png)
 
-```html
-<section class="contenido">
-        <h1>Los gatos negros te dan la bienvenida</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-</section>
-```
 ```javascript
 $('.contenido').find('p').last().prev().css('background-color', 'red');
 ```
 
 ### Buscar arriba y abajo en el DOM
-
-```html
-<main>
-    <aside class="lateral">
-        <img src="img/black-cat.jpg" alt="Black Cats Rules!">
-    
-        <!-- Social -->
-        <a href="#">
-            <img src="img/mail.png" alt="Correo-e">
-            <span>Correo-e</span>
-        </a>
-        <a href="#">
-            <img src="img/snapchat.png" alt="Snapchat">
-            <span>Snapchat</span>
-        </a>
-        <a href="#">
-            <img src="img/twitter.png" alt="Twitter">
-            <span>Twitter</span>
-        </a>
-                
-    </aside>
-    
-    <!-- Contenido -->
-    <section class="contenido">
-        <h1>Los gatos negros te dan la bienvenida</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. </p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. </p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. </p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. </p>
-                
-        <!-- Thumbnails -->
-        <ul>
-            <li></li>
-            <li></li>
-            <li></li>
-        </ul>
-    </section>    
-</main>        
-```
 ![Descripción de la imagen](img/Screenshot_04.png)
+
 ```javascript
 // parent (solo el primer padre del elemento)
 let $parent = $('.lateral').find('span').last().parent();
@@ -133,6 +117,7 @@ let $parent = $('.lateral').find('span').last().parent();
 ```
 
 ![Descripción de la imagen](img/Screenshot_05.png)
+
 ```javascript
 // parents (todos los padres)
 let $parent = $('.lateral').find('span').last().parents();
@@ -140,12 +125,15 @@ let $parent = $('.lateral').find('span').last().parents();
 ```
 
 ![Descripción de la imagen](img/Screenshot_06.png)
+
 ```javascript
 // children / find
     let $children = $('main').children();
     $children.css('border', '1px solid red');
 ```
+
 ![Descripción de la imagen](img/Screenshot_07.png)
+
 ```javascript
 // children / find
     let $children = $('main').find('*');
@@ -158,15 +146,7 @@ let $parent = $('.lateral').find('span').last().parents();
 ### Insertar contenido en el DOM
 Con .after y .before se añade antes o despues del elemento seleccionado
 ![Descripción de la imagen](img/Screenshot_08.png)
-```html
-<section class="contenido">
-    <h1>Los gatos negros te dan la bienvenida</h1>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-</section>
-```
+
 ```javascript
     let $enlace = $('<a href="#">Conocer más gatos negros!</a>');
     $('.contenido').find('p').first().after($enlace);
@@ -175,15 +155,7 @@ Con .after y .before se añade antes o despues del elemento seleccionado
 ### Insertar contenido en el DOM II
 Con .prepend y .append se añade dentro del elemento seleccionado al principio o al final.
 ![Descripción de la imagen](img/Screenshot_09.png)
-```html
-<section class="contenido">
-    <h1>Los gatos negros te dan la bienvenida</h1>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-</section>
-```
+
 ```javascript
     let $enlace = $('<a href="#">Conocer más gatos negros!</a>');
     $('.contenido').find('p').prepend($enlace);
@@ -191,61 +163,31 @@ Con .prepend y .append se añade dentro del elemento seleccionado al principio o
 
 ### Eliminar elementos del DOM
 ![Descripción de la imagen](img/Screenshot_10.png)
-```html
-<section class="contenido">
-    <h1>Los gatos negros te dan la bienvenida</h1>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-</section>
-```
+
 ```javascript
 $('.contenido').find('p').remove();
 ```
 
 ### Interacción en el DOM
 Cuando haga click en el enlace de Twitter, todos los parrafos se pondrán en rojo.
+
 ![Descripción de la imagen](img/Screenshot_11.png)
-```html
-<aside class="lateral">
-        <img src="img/black-cat.jpg" alt="Black Cats Rules!">
-    
-        <!-- Social -->
-        <a href="#">
-            <img src="img/mail.png" alt="Correo-e">
-            <span>Correo-e</span>
-        </a>
-        <a href="#">
-            <img src="img/snapchat.png" alt="Snapchat">
-            <span>Snapchat</span>
-        </a>
-        <a href="#">
-            <img src="img/twitter.png" alt="Twitter">
-            <span>Twitter</span>
-        </a>
-                
-    </aside>
-    
-    <!-- Contenido -->
-    <section class="contenido">
-        <h1>Los gatos negros te dan la bienvenida</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. </p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. </p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. </p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. </p>
-                
-        <!-- Thumbnails -->
-        <ul>
-            <li></li>
-            <li></li>
-            <li></li>
-        </ul>
-    </section>   
-```
+
 ```javascript
 // Escuchar un <a>
     $('.lateral').find('a').last().on('click', function() {
         $('.contenido').children('p').css('color', 'red');
+    });
+```
+
+### This
+![Descripción de la imagen](img/Screenshot_12.png)
+
+Convertimos "this" en un objeto jquery para poder usar los métodos de jquery. Con "this" obtenemos que el evento se produzca sobre el elemento con el que interaccionamos, en este caso haciendo click.
+```javascript
+// Escuchar los <p>
+    $('.contenido').children('p').on('click', function(evento) {
+        evento.preventDefault();
+        $(this).css('color', 'red'); //convertir this en objeto jquery
     });
 ```
