@@ -191,3 +191,5 @@ Convertimos "this" en un objeto jquery para poder usar los métodos de jquery. C
         $(this).css('color', 'red'); //convertir this en objeto jquery
     });
 ```
+
+### Atributos data
