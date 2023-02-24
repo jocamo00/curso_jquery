@@ -203,3 +203,48 @@ Con .prepend y .append se añade dentro del elemento seleccionado al principio o
 ```javascript
 $('.contenido').find('p').remove();
 ```
+
+### Interacción en el DOM
+Cuando haga click en el enlace de Twitter, todos los parrafos se pondrán en rojo.
+```html
+<aside class="lateral">
+        <img src="img/black-cat.jpg" alt="Black Cats Rules!">
+    
+        <!-- Social -->
+        <a href="#">
+            <img src="img/mail.png" alt="Correo-e">
+            <span>Correo-e</span>
+        </a>
+        <a href="#">
+            <img src="img/snapchat.png" alt="Snapchat">
+            <span>Snapchat</span>
+        </a>
+        <a href="#">
+            <img src="img/twitter.png" alt="Twitter">
+            <span>Twitter</span>
+        </a>
+                
+    </aside>
+    
+    <!-- Contenido -->
+    <section class="contenido">
+        <h1>Los gatos negros te dan la bienvenida</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. </p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. </p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. </p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. </p>
+                
+        <!-- Thumbnails -->
+        <ul>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </section>   
+```
+```javascript
+// Escuchar un <a>
+    $('.lateral').find('a').last().on('click', function() {
+        $('.contenido').children('p').css('color', 'red');
+    });
+```
