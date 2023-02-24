@@ -206,6 +206,7 @@ $('.contenido').find('p').remove();
 
 ### Interacción en el DOM
 Cuando haga click en el enlace de Twitter, todos los parrafos se pondrán en rojo.
+![Descripción de la imagen](img/Screenshot_11.png)
 ```html
 <aside class="lateral">
         <img src="img/black-cat.jpg" alt="Black Cats Rules!">
