@@ -193,3 +193,35 @@ Convertimos "this" en un objeto jquery para poder usar los métodos de jquery. C
 ```
 
 ### Atributos data
+```javascript
+// data en este caso es un getter, nos devuelve lo que hay el atributo data-rrss
+    /*let $enlace = $('.lateral').find('a').last();
+    let valorData = $enlace.data('rrss');
+    console.log(valorData);*/
+
+    // data en este caso es un setter, cambia el valor del atributo
+    let $enlace = $('.lateral').find('a').last();
+    $enlace.data('rrss', 'Nuevo valor')
+    let valorData = $enlace.data('rrss');
+    console.log(valorData);
+```
+
+### Variable cache
+![Descripción de la imagen](img/Screenshot_13.png)
+```javascript
+/*let $parrafo = $('p').last();
+
+    //css
+    $parrafo.css('color', 'goldenrod');
+
+    // atributo data
+    $parrafo.data('color', 'amarillo');
+
+    // append
+    let $enlace = $('<a href="http://www.media.es" target="_blank">wmedia.es</a>');
+    $parrafo.append($enlace);*/
+
+    // Method chaining - encadenamiento de métodos
+    let $enlace = $('<a href="http://www.media.es" target="_blank">wmedia.es</a>');
+    $('p').last().css('color', 'goldenrod').data('color', 'amarillo').append($enlace);
+```
