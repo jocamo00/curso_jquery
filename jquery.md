@@ -225,3 +225,24 @@ Convertimos "this" en un objeto jquery para poder usar los métodos de jquery. C
     let $enlace = $('<a href="http://www.media.es" target="_blank">wmedia.es</a>');
     $('p').last().css('color', 'goldenrod').data('color', 'amarillo').append($enlace);
 ```
+
+### Event delegation
+Si ponemos un event listener, este no funcionara sobre elementos que añamos insertado después en el DOM,
+para solucionar esto hacemos un event listener delegation, que es pasar un tercer parametro con el 
+elemento sobre el que queremos hacer el evento y seleccionamos un elemento del DOM que estuviera en el DOM desde el principio y contenga el elemento sobre el que queremos ejecutar el evento.
+```javascript
+// event listener directo (no funcionaria con elementos que añadamos después en el DOM)
+    /*$('a').on('click', function(evt) {
+        evt.preventDefault();
+        console.log('A clicked!');
+    });*/
+
+    // event listene delegado
+    $('main').on('click', 'a', function(evt) {
+        evt.preventDefault();
+        console.log('A clicked!');
+    });
+    
+    let $enlace = $('<a href="http://www.media.es" target="_blank">wmedia.es</a>');
+    $('p').last().css('color', 'goldenrod').data('color', 'amarillo').append($enlace);
+```
