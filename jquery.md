@@ -230,6 +230,7 @@ Convertimos "this" en un objeto jquery para poder usar los métodos de jquery. C
 Si ponemos un event listener, este no funcionara sobre elementos que añamos insertado después en el DOM,
 para solucionar esto hacemos un event listener delegation, que es pasar un tercer parametro con el 
 elemento sobre el que queremos hacer el evento y seleccionamos un elemento del DOM que estuviera en el DOM desde el principio y contenga el elemento sobre el que queremos ejecutar el evento.
+
 ```javascript
 // event listener directo (no funcionaria con elementos que añadamos después en el DOM)
     /*$('a').on('click', function(evt) {
@@ -245,4 +246,21 @@ elemento sobre el que queremos hacer el evento y seleccionamos un elemento del D
     
     let $enlace = $('<a href="http://www.media.es" target="_blank">wmedia.es</a>');
     $('p').last().css('color', 'goldenrod').data('color', 'amarillo').append($enlace);
+```
+
+### Filtrar resultados
+![Descripción de la imagen](img/Screenshot_14.png)
+
+```javascript
+// selector
+    /*let $enlace = $('.lateral').find('a').filter(':odd');
+    $enlace.css('transform', 'scale(2)');*/
+
+    // función - test
+    let $enlaceSnapchat = $('.lateral').find('a').filter(function (indice, elemento) {
+        // console.log(elemento === this); // es this
+        return $(elemento).find('span').text() === 'Snapchat';
+      });
+
+      console.log($enlaceSnapchat.css('transform', 'rotate(45deg'));
 ```
