@@ -354,3 +354,18 @@ let $input = $('#claim'),
     $h1.text($input.val());
   });
 ```
+
+### Keyboard keycodes
+Las teclas tienen un código, con which podemos capturar la letra con la que queremos que se desencadene un evento. Por ejemplo con el intro, en el ejemplo escribimos en el input y al presionar intro el texto del h1 se sustituye por el introducido en el input.
+
+```javascript
+let $input = $('#claim'),
+      $h1 = $('.contenido').children('h1');
+
+  $input.keyup(function (event) { 
+    let codigo = event.which;
+    if(codigo === 13){
+      $h1.text($input.val());
+    }
+  });
+```
