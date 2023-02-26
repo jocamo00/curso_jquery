@@ -321,3 +321,36 @@ let $parrafos = $('.contenido').children('p');
     });
    }
 ```
+
+### Eventos de teclado
+
+![Descripción de la imagen](img/Screenshot_15.png)
+
+Estos eventos funcionan bien con inputs, añadimos un input en el html, lo que escribamos en este input cambiara el h1.
+```html
+ <link rel="stylesheet" href="css/main.css">
+    <style>
+        #claim {
+            width: 100%;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    
+    <!-- Contenedor principal -->
+    <main>
+
+        <!-- Sidebar -->
+        <aside class="lateral">
+            <img src="img/black-cat.jpg" alt="Black Cats Rules!">
+            <input type="text" id="claim">
+```
+```javascript
+let $input = $('#claim'),
+      $h1 = $('.contenido').children('h1');
+
+  $input.keyup(function (event) { 
+    $h1.text($input.val());
+  });
+```
